@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'pg'
+gem 'haml'
 
 gem 'unicorn'
 gem 'capistrano'
