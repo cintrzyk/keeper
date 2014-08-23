@@ -12,5 +12,6 @@ gem 'unicorn'
 gem 'capistrano'
 gem 'capistrano-rails'
 gem 'capistrano-rbenv', '~> 2.0'
+gem 'paperclip'
 
 gem 'spring', group: :development
