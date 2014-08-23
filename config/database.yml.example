@@ -1,0 +1,17 @@
+defaults: &defaults
+  adapter: postgresql
+  host: localhost
+  username: keeper
+  password: keeper
+
+test:
+  <<: *defaults
+  database: keeper_test
+
+development:
+  <<: *defaults
+  database: keeper_dev
+
+production:
+  <<: *defaults
+  database: keeper_pro
