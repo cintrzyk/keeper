@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'pg'
 
+gem 'unicorn'
 gem 'capistrano'
 gem 'capistrano-rails'
 gem 'capistrano-rbenv', '~> 2.0'
