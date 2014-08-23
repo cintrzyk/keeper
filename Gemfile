@@ -8,4 +8,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'pg'
 
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-rbenv', '~> 2.0'
+
 gem 'spring', group: :development
