@@ -7,8 +7,11 @@
         %span.icon-bar
       %a.navbar-brand{ href: '#' } Keeper
     .navbar-collapse.collapse.navbar-inverse-collapse
-      %form.navbar-form.navbar-left
-        %input.form-control.col-lg-12{ placeholder: 'Search', type: 'text' }
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          = link_to 'Sign in', '/auth/google'
+      - if signed_in?
+        %form.navbar-form.navbar-left
+          %input.form-control.col-lg-12{ placeholder: 'Search', type: 'text' }
+      %p.navbar-text.navbar-right
+        - if signed_in?
+          = link_to 'Sign out', signout_path, class: 'btn btn-xs btn-default'
+        - else
+          = link_to 'Sign in', '/auth/google', class: 'btn btn-xs btn-default'

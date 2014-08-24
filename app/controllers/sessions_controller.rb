@@ -1,7 +1,14 @@
 class SessionsController < ApplicationController
+  skip_before_action :signup_required, only: [:create, :failure]
+
   def create
     sign_user_in
-    redirect_to root_path
+    redirect_to dashboard_path
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice: 'Signed out!'
   end
 
   def failure

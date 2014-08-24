@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :items, only: :create
 
   # Authentication
+  get :signout, to: 'sessions#destroy'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: 'sessions#failure'
 end
