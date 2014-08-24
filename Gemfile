@@ -14,5 +14,6 @@ gem 'capistrano'
 gem 'capistrano-rails'
 gem 'capistrano-rbenv', '~> 2.0'
 gem 'paperclip'
+gem 'omniauth-google-oauth2'
 
 gem 'spring', group: :development
