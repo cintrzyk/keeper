@@ -2,6 +2,7 @@ class Item < ActiveRecord::Base
   belongs_to :user
   has_attached_file :document
 
+  validates :user, presence: true
   validates_attachment :document, content_type: {
                                     content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
                                   }

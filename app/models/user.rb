@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :items
+  has_many :items, dependent: :destroy
   has_attached_file :image
 
   validates_attachment :image, content_type: {
