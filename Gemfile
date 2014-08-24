@@ -16,4 +16,12 @@ gem 'capistrano-rbenv', '~> 2.0'
 gem 'paperclip'
 gem 'omniauth-google-oauth2'
 
-gem 'spring', group: :development
+group :development do
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'quiet_assets'
+  gem 'bullet'
+  gem 'pry-byebug'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'web-console', '2.0.0.beta3'
+end
