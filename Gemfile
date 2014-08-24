@@ -16,6 +16,10 @@ gem 'capistrano-rbenv', '~> 2.0'
 gem 'paperclip'
 gem 'omniauth-google-oauth2'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+
 group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
