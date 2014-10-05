@@ -15,6 +15,7 @@ gem 'capistrano-rails'
 gem 'capistrano-rbenv', '~> 2.0'
 gem 'paperclip'
 gem 'omniauth-google-oauth2'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
