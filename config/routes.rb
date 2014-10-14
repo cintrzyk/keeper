@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get :dashboard, to: 'dashboard#index'
 
   # Resources
-  resources :items, only: :create
+  resources :items, only: :create do
+    get :download
+  end
 
   # Authentication
   get :signout, to: 'sessions#destroy'

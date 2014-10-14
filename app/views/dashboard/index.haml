@@ -1,14 +1,28 @@
 .row
-  .col-md-6.col-md-offset-3
-    = form_for @item, url: items_path, html: { multipart: true } do |form|
-      = form.file_field :document
-      .progress
-        .progress-bar{ style: 'width: 0%;' }
-      = form.submit class: 'btn btn-primary'
-
-.row
-  .col-md-12
-    %ul.items-list
-      - @items.each do |item|
-        %li
-          = "#{item.document_file_name} on #{item.created_at.to_s(:short)}"
+  .col-md-6
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Name
+          %th Type
+          %th Size
+          %th Created
+          %th
+      %tbody
+        - @items.each do |item|
+          %tr
+            %td= item.document_file_name
+            %td= item.document_content_type
+            %td= number_to_human_size item.document_file_size
+            %td= item.created_at.to_s(:short)
+            %td
+              = link_to item_download_path(item), class: 'btn btn-default btn-xs btn-success' do
+                = fa_icon 'arrow-circle-down'
+                download
+  .col-md-6
+    .jumbotron.text-center.upload-area
+      = fa_icon 'cloud-upload', class: 'fa-5x'
+      %p Drag & Drop Files Here
+      %span.btn.btn-primary.fileinput-button
+        %span Select files here
+        = file_field_tag :document, name: 'documents[]', accept: Item::CONTENT_TYPES, multiple: true

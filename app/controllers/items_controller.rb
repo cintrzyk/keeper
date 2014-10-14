@@ -14,6 +14,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def download
+    item = Item.find(params[:item_id])
+    send_file item.document.path
+  end
+
   private
 
   def item_params

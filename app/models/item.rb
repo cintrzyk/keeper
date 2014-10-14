@@ -1,11 +1,10 @@
 class Item < ActiveRecord::Base
+  CONTENT_TYPES = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
   belongs_to :user
   has_attached_file :document
 
   validates :user, presence: true
-  validates_attachment :document, content_type: {
-                                    content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
-                                  }
+  validates_attachment :document, content_type: { content_type: CONTENT_TYPES }
 
   def to_jq_upload
     {
